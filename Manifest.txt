@@ -1,0 +1,7 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/rjson
+lib/rjson.rb
+test/test_rjson.rb
