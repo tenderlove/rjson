@@ -1,26 +1,29 @@
 = rjson
 
-* FIX (url)
+* http://github.com/tenderlove/rjson
 
 == DESCRIPTION:
 
-FIX (describe your package)
+This is a JSON parser built with Racc.  It is meant as an example of writing
+lexers and parsers in Ruby rather than a full fledged JSON parser.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* Many!
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+    require 'rjson'
+    
+    RJSON.load '{"foo":"bar"}'
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* racc
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+No.
 
 == LICENSE:
 
