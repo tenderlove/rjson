@@ -13,6 +13,8 @@ module RJSON
     end
 
     def next_token
+      return if @ss.eos?
+
       case
       when text = @ss.scan(STRING) then [:STRING, text]
       when text = @ss.scan(NUMBER) then [:NUMBER, text]

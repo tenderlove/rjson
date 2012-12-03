@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'rjson/tokenizer'
+require 'rjson/stream_tokenizer'
 require 'stringio'
 
 module RJSON
@@ -32,10 +33,19 @@ module RJSON
         tok = new_tokenizer token.last
         assert_equal token, tok.next_token
       end
+
+      define_method("test_stream_#{token.join '_'}") do
+        tok = new_stream_tokenizer token.last
+        assert_equal token, tok.next_token
+      end
     end
 
     def new_tokenizer string
       Tokenizer.new StringIO.new string
+    end
+
+    def new_stream_tokenizer string
+      StreamTokenizer.new StringIO.new string
     end
   end
 end

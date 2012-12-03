@@ -15,4 +15,13 @@ Hoe.spec 'rjson' do
   self.extra_rdoc_files  = FileList['*.rdoc']
 end
 
+rule '.rb' => '.y' do |t|
+  sh "racc -l -o #{t.name} #{t.source}"
+end
+
+task :compile => 'lib/rjson/parser.rb'
+
+task :test => :compile
+
+
 # vim: syntax=ruby
