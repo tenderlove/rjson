@@ -18,6 +18,13 @@ module RJSON
       assert_equal({ 'foo' => { 'bar' => nil }}, r)
     end
 
+    def test_object_key_without_value_raises_exception
+      parser = new_parser '{"foo":}'
+      assert_raises(Racc::ParseError) do
+        parser.parse.result
+      end
+    end
+
     def new_parser string
       tokenizer = Tokenizer.new StringIO.new string
       Parser.new tokenizer
